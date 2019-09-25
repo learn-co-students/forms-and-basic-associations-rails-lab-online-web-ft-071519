@@ -19,4 +19,19 @@ class Song < ActiveRecord::Base
   def artist_name
     self.artist ? self.artist.name : nil
   end
+
+  #notes is an array of strings?:
+  def note_contents=(notes)
+    notes.each do |nc|
+      if nc != ""
+        new_note = self.notes.build(content: nc)
+        new_note.save
+      end
+    end
+  end
+
+  def note_contents
+    all_content = self.notes.map {|n| n.content}
+    #all_content.map {|c| c.delete if c == "" || c == nil}
+  end
 end
