@@ -1,3 +1,9 @@
 <h1>Songs#show</h1>
 
 Title: <%= @song.title %>
+<%= form_for @song do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  
+  <%= f.submit %>
+<% end %>
