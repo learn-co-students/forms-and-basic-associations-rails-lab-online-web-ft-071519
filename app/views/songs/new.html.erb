@@ -4,6 +4,24 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br />
+  <%= f.label :artist_name %>
+  <%= f.text_field :artist_name %>
+  <br />
+  <%= f.label :genre_id %>
+  <%= f.collection_select :genre_id, Genre.all, :name, :name %>
+  <br />
+  <%= f.label :notes_1 %>
+  <%= f.text_area :notes_1 %>
+  <br />
+  <%= f.label :notes_2 %>
+  <%= f.text_area :notes_2 %>
+  <br />
+  <%= f.label :notes_3 %>
+  <%= f.text_area :notes_3 %>
+  <br />
+  <%= f.label :notes_4 %>
+  <%= f.text_area :notes_4 %>
+  <br />
 
   <%= f.submit %>
 <% end %>
